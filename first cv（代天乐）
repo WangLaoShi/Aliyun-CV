@@ -1,0 +1,54 @@
+# 第一节
+## 如何理解赛题
+1、去看赛题的目的主要是在做什么（不要理解的有偏差）
+2、查看训练题的答案与图片作比较（全部对比），寻找规律
+
+对比图片前需要考虑用什么环境（网络/本地）
+
+## 第三方库的使用（OpenCV）
+### OpenCV的安装
+!pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+
+### OpenCV常见函数&方法
+
+使用前需要import cv2
+
+1、读入图片 
+cv2.imread(filepath,flags)
+
+2、显示图像
+cv2.imshow(wname,img)
+wname(显示图像窗口名字）
+
+3、保存一张图像
+cv2.imwrite(file，img，num)
+file(保存文件名）
+img（要保存的图像）
+num（压缩级——默认为3）
+
+4、图像复制
+img.copy() 
+
+5、图像颜色空间转换
+cv2.cvtColor() 
+
+6、图像缩放
+cv2.resize(image, image2,dsize)
+
+7、图像翻转
+cv2.flip(img,flipcode) 
+flipcode = 0：沿x轴翻转
+flipcode > 0：沿y轴翻转
+flipcode < 0：x,y轴同时翻转
+
+8、图像添加文字（照片，添加的文字，左上角坐标，字体，字体大小，颜色，字体粗细）
+cv2.putText(img,'text',(50,150)
+
+9、画出矩行
+cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
+（x，y）是矩阵的左上方的点
+（x+w，y+h）是矩阵右下方的点
+
+10、返回图像的四值属性
+cv2.boundingRect(img)
+四属性值：下x，y，w，h；x，y指左上角点的坐标，而w，h指矩阵的宽和高
